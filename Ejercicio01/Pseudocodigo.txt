@@ -1,0 +1,19 @@
+Acción aplicarAumento(registrosEstudiantes, registrosEmpleados)
+Inicio
+	Para cada estudiante en registrosEstudiantes hacer
+		Si estudiante.calificacion > 14 Entonces
+			apellido <- estudiante.apellido
+			nombre <- estudiante.nombre
+			Para cada empleado en registrosEmpleados hacer
+				Si empleado.apellido = apellido y 
+				empleado.nombre = nombre Entonces
+					salarioActual <- empleado.salario
+					aumento <- salarioActual * 0.1
+					nuevoSalario <- salarioActual + aumento
+					empleado.salario <- nuevoSalario
+					Salir
+				FinSi
+			FinPara
+		FinSi
+	FinPara
+Fin

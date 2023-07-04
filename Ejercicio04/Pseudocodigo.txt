@@ -1,0 +1,51 @@
+A)
+Acción añadirPalabra(palabra)
+Inicio
+	nuevoNodo <- nuevo Nodo(palabra)
+	Si vacia Entonces
+		nuevoNodo.siguiente <- nuevoNodo
+    		nuntero <- nuevoNodo
+	Sino Si nuevaPalabra > puntero.palabra Entonces
+    		nuevoNodo.siguiente <- puntero.siguiente
+    		nuntero.siguiente <- nuevoNodo
+    		nuntero <- nuevoNodo
+	Sino
+    		actual <- puntero.siguiente
+    		anterior <- Nulo
+    
+    		Mientras actual != puntero && nuevaPalabra > actual.palabra Hacer
+        		anterior <- actual
+        		actual <- actual.siguiente
+    		MinMientras
+    
+    		nuevoNodo.siguiente <- actual
+   		anterior.siguiente <- nuevoNodo
+	FinSi
+Fin
+
+
+B)
+Acción eliminarPalabra(palabra)
+Inicio
+	Si vacia Entonces
+		Retornar
+	FinSi
+
+	actual <- puntero.siguiente
+	anterior <- puntero
+
+	Hacer
+    		Si actual.palabra = palabraEliminar Entonces
+        		anterior.siguiente <- actual.siguiente
+        
+        		Si actual = puntero Entonces
+            			puntero <- anterior
+        		FinSi
+        
+        		Retornar
+    		FinSi
+    
+    		anterior <- actual
+    		actual <- actual.siguiente
+	Mientras actual diferente de puntero.siguiente
+Fin

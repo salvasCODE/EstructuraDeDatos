@@ -1,0 +1,24 @@
+Acción invertirPila(Pila)
+Inicio
+    Si pilaVacia(pila) Entonces
+        Retornar
+    FinSi
+    
+    elemento <- desempilar(pila)   //Guardar el elemento superior de la pila
+    
+    invertirPila(pila)  // Llamada recursiva para invertir el resto de la pila
+    
+    insertarAlFondo(pila, elemento)  //Insertar el elemento al fondo de la pila
+FinAcción
+
+Acción insertarAlFondo(Pila, elemento)
+Inicio
+    Si pilaVacia(pila) Entonces
+        empilar(pila, elemento)  //Si la pila está vacía, simplemente apilamos el elemento
+    Sino
+        cima <- desempilar(pila)  //Desapilar el elemento superior
+        insertarAlFondo(pila, elemento)  //Llamada recursiva para insertar en el fondo
+        
+        empilar(pila, cima)  //Apilar nuevamente el elemento desapilado
+    FinSi
+FinAcción

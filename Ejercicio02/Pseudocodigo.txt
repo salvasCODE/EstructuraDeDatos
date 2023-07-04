@@ -1,0 +1,29 @@
+Accion encontrarPuntoDeSilla(matriz[][])
+Inicio
+	filas <- longitud(matriz)
+	columnas <- longitud(matriz)
+	Para i desde 0 hasta filas hacer
+		valorMinimoFila <- ValorMáximoEntero
+		columnaMinimoFila <- -1
+		Para j desde 0 hasta columnas hacer
+			Si matriz[i][j] < valorMinimoFila Entonces
+				valorMinimoFila <- matriz[i][j]
+				columnaMinimoFila <- j
+			FinSi
+		FinPara
+
+		esPuntoDeSilla <- Verdadero
+
+		Para k desde 0 hasta filas hacer
+			Si matriz[k][columnaMinimoFila] > valorMinimoFila Entonces
+				esPuntoDeSilla <- Falso
+				Salir		
+			FinSi
+		FinPara
+
+		Si esPuntoDeSilla Entonces
+			Retornar [i, columnaMinimoFila]
+		FinSi
+	FinPara
+	Retornar nulo
+Fin
